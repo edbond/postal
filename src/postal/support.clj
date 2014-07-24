@@ -55,14 +55,10 @@
            epoch (.getTime (java.util.Date.))]
        (format "<%s.%s@%s>" onlychars epoch host))))
 
-(defn pom-version []
-  (let [pom "META-INF/maven/com.draines/postal/pom.properties"
-        props (doto (Properties.)
-                (.load (-> pom io/resource io/input-stream)))]
-    (.getProperty props "version")))
+(def version "1.13")
 
 (defn user-agent []
   (let [prop (Properties.)
         ver (or (System/getProperty "postal.version")
-                (pom-version))]
+                version)]
     (format "postal/%s" ver)))
