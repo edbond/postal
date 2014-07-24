@@ -55,7 +55,7 @@
            epoch (.getTime (java.util.Date.))]
        (format "<%s.%s@%s>" onlychars epoch host))))
 
-(def version "1.13")
+(def version "1.13.1")
 
 (defn user-agent []
   (let [prop (Properties.)
